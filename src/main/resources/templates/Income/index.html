@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout :: head('Incomes')"></head>
+    <body>
+        <header th:replace="layout :: Header"></header>
+        <form action="/income/save" th:object="${Income}" method="POST" class="w-50 p-5">
+
+            <div class="form-group">
+                <label>Transaction's Title</label>
+                <input class="form-control input-sm" th:field="*{title}" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Amount</label>
+                <input class="form-control input-sm" th:field="*{amount}" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <input class="form-control input-sm" th:field="*{description}" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Transaction's Date</label>
+                <input class="form-control input-sm datepicker" th:field="*{transaction_date}" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Attachment</label>
+                <input class="form-control input-sm" th:field="*{attachment}" autocomplete="off">
+            </div>
+
+            <div class="py-3  w-100">
+                <button type="submit" class="btn btn-dark w-100">Save</button>
+            </div>
+
+        </form>
+    </body>
+
+    <div th:replace="layout :: Scripts"></div>
+</html>
